@@ -1,0 +1,13 @@
+bcryptjs
+cookie-parser 
+cors 
+csurf 
+dotenv
+express
+
+
+express-async-handler express-validator faker helmet jsonwebtoken morgan per-env pg@">=8.4.1" sequelize@5 sequelize-cli@5
+
+npx sequelize model:generate --name User --attributes fname:string,lname:string,email:string,hashedPassword:string
+npx sequelize model:generate --name Ingredient  --attributes name:string,ozInCup:integer
+ npx sequelize model:generate --name PanItem --attributes itemId:integer,pantryId:integer,amount:integer
