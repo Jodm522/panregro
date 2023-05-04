@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       })
     }
   }
+
   User.init({
     fname:{
      type: DataTypes.STRING,
@@ -69,15 +70,22 @@ module.exports = (sequelize, DataTypes) => {
     },
   },
   scopes:{
-  currentUser:{
-      attributes:{exclude:['hashedPassword']},
-    },
-  loginUser:{attributes:{}
-  },
+  // currentUser:{
+  //     attributes:{exclude:['hashedPassword']},
+  //   },
+  // loginUser:{attributes:{}
+  // },
   },
 },
    
   );
+
+  User.addScope('loginUser',{
+    attributes:{},
+  },)
+  User.addScope('currentUser',{
+    attributes:{exclude:['hashedPassword']},
+  },)
   User.prototype.toSafeObject = function () {
     // remember, this cannot be an arrow function
     const { id, username, email } = this; // context will be the User instance

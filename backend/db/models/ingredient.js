@@ -21,5 +21,20 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Ingredient',
   });
+
+
+Ingredient.add = async function({
+  name,
+  category,
+  ozInCup,
+}){
+  const ingredient = await Ingredient.create({
+    name,
+    category,
+    ozInCup
+  });
+  return ingredient
+}
+
   return Ingredient;
 };

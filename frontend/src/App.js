@@ -5,6 +5,7 @@ import Home from './components/homepage'
 import Navigation from './components/navigation'
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
+import Items from "./components/items";
 import * as sessionActions from "./store/session";
 import './App.css';
 
@@ -23,6 +24,7 @@ function App() {
     <Route path ="/" element={<Home />}/>
     <Route path="/login" element={<LoginFormPage />}/>
     <Route path="/signup" element={<SignupFormPage />}/>
+    <Route path="/items" element = {<Items />} />
  </Routes>
    </BrowserRouter>
   
